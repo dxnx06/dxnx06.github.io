@@ -1,1 +1,253 @@
-index
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola David - Portfolio</title>
+    <style>
+        :root {
+            --color-primary: #667eea;
+            --color-secondary: #764ba2;
+            --color-accent: #f093fb;
+            --color-text: #2d3748;
+            --color-text-light: #718096;
+            --color-bg: #f7fafc;
+            --color-white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Elementos decorativos de fondo */
+        .bg-decoration {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--color-white);
+            top: -100px;
+            right: -100px;
+        }
+
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--color-white);
+            bottom: -50px;
+            left: -50px;
+        }
+
+        .circle-3 {
+            width: 150px;
+            height: 150px;
+            background: var(--color-accent);
+            top: 50%;
+            right: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Contenedor principal */
+        .container {
+            background: var(--color-white);
+            max-width: 600px;
+            width: 100%;
+            padding: 50px 40px;
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Encabezado con emoji */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .emoji {
+            font-size: 4em;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: wave 2s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(20deg); }
+            75% { transform: rotate(-20deg); }
+        }
+
+        h1 {
+            font-size: 3em;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: var(--color-text-light);
+            margin-bottom: 30px;
+        }
+
+        /* Línea divisoria decorativa */
+        .divider {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+            margin: 30px 0;
+            border-radius: 2px;
+        }
+
+        /* Sección de contenido */
+        .content {
+            text-align: center;
+        }
+
+        .message {
+            font-size: 1.2em;
+            color: var(--color-text);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* Tarjeta del autor */
+        .author-card {
+            background: linear-gradient(135deg, #f6f8fb 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 30px;
+            border: 2px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .author-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+        }
+
+        .author-label {
+            font-size: 0.85em;
+            color: var(--color-text-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .author-name {
+            font-size: 1.4em;
+            color: var(--color-text);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Elementos decorativos adicionales */
+        .sparkle {
+            display: inline-block;
+            margin: 0 5px;
+            animation: sparkle 1.5s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .emoji {
+                font-size: 3em;
+            }
+
+            .message {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Elementos decorativos de fondo -->
+    <div class="bg-decoration circle-1"></div>
+    <div class="bg-decoration circle-2"></div>
+    <div class="bg-decoration circle-3"></div>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <div class="header">
+            <div class="emoji">👋</div>
+            <h1>Hola David</h1>
+            <p class="subtitle">Bienvenido a tu página personal</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="content">
+            <p class="message">
+                <span class="sparkle">✨</span>
+                Esta página ha sido creada especialmente para ti
+                <span class="sparkle">✨</span>
+            </p>
+
+            <div class="author-card">
+                <div class="author-label">Hecho por</div>
+                <p class="author-name">Daniel Redondo Olmos</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
